@@ -1,0 +1,12 @@
+<div id="image1"><a href="#" onclick="submit(left); return false;"><img src="<?php echo Atomik::asset($allcars[0]['imagename']) ?>"></a>
+<p><?php echo $allcars[0]['mname']; echo $allcars[0]['cname'] ?></p></div>
+
+<div id="image2"><a href="#" onclock="submit(right); return false;"><img src="<?php echo Atomik::asset($allcars[1]['imagename']) ?>"></a>
+<p><?php echo $allcars[1]['mname']; echo $allcars[1]['cname'] ?></p></div>
+
+<form id="leftcar" method="post" action="todo">
+        <input type="hidden" value="lol" />
+</form>
+<form id="rightcar" method="post" action="todo">
+	<input type="hidden" value="lol" />
+</form>
