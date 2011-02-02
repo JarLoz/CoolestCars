@@ -1,5 +1,8 @@
 <?php
 
-$carresult = A('db:select manufacturer.name as mname, car.name as cname, car.imagename from car inner join manufacturer on car.manufacturerkey = manufacturer.manufacturerid');
+$carresult = A('db:carselection');
 $allcars = $carresult->fetchAll();
 shuffle($allcars);
+$leftcar = $allcars[0];
+$rightcar = $allcars[1];
+

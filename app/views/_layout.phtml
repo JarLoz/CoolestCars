@@ -11,9 +11,9 @@
 		<script type="text/javascript">
       		function submit_form(whichOne){
         		var el;
-       			if (whichOne == "right"){
+       			if (whichOne == 2){
           			el = document.getElementById("rightcar");
-        		} else if (whichOne == "left") {
+        		} else if (whichOne == 1) {
           			el = document.getElementById("leftcar");
         		}
         		el.submit();
@@ -23,7 +23,7 @@
 	<body>
 		<div id="title">
 			<h1>CoolestCars</h1>
-			Car ranking | Manufacturer ranking | Admin Login
+			<p><a href="<?php echo Atomik::url('home')?>" title="Home">Home</a> | Car ranking | Manufacturer ranking | Admin Login</p>
 		</div>
 		<div id="content">
 			<?php echo $contentForLayout; ?>
