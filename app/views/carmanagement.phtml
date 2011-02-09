@@ -1,0 +1,31 @@
+<div id='centeredcontent'>
+<p>New Car</p>
+<form name="newcar" action="<?php echo Atomik::url('carmanagement-business') ?>" method="post">
+Car name: <input type="text" name="name" /><br />
+Manufacturer: <select name="manufacturerkey">
+<?php foreach ($manarray as $man){
+		echo '<option value="';
+		echo $man['manid'];
+		echo '">';
+		echo $man['name'];
+		echo '</option>'
+		;}
+?>
+</select><br />
+Image URL: <input type="text" name="imagename" /><br />
+<input type="submit" name="add" value="Submit" />
+</form>
+<p>Delete Car</p>
+<form name="deletecar" action="<?php echo Atomik::url('carmanagement-business') ?>" method="post">
+Car: <select name="carid">
+<?php foreach ($carsarray as $car){
+		echo '<option value="';
+		echo $car['carid'];
+		echo '">';
+		echo $car['name'];
+		echo '</option>'
+		;}
+?>
+</select><br />
+<input type="submit" name="delete" value="Submit" />
+</form>
