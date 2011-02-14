@@ -7,18 +7,6 @@
 		<?php foreach (A('styles', array()) as $style): ?>
 		<link rel="stylesheet" type="text/css" href="<?php echo Atomik::appAsset($style) ?>" />
 		<?php endforeach; ?>
-		
-		<script type="text/javascript">
-      		function submit_form(whichOne){
-        		var el;
-       			if (whichOne == 2){
-          			el = document.getElementById("rightcar");
-        		} else if (whichOne == 1) {
-          			el = document.getElementById("leftcar");
-        		}
-        		el.submit();
-      		}
-    	</script>
 	</head>
 	<body>
 		<div id="title">

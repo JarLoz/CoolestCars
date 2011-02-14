@@ -8,7 +8,7 @@ if($_POST['add']){
 		'imagename' => array('required' => true));
 	if(($data = Atomik::filter($_POST, $rule)) === false) {
 		Atomik::flash('Invalid form', 'error');
-		return;
+		Atomik::redirect('carmanagement');	
 	}
 	Atomik_DB::insert('car', $data);
 
@@ -18,7 +18,7 @@ elseif($_POST['delete']){
 		'carid' => array('required' => true));
 	if(($data = Atomik::filter($_POST, $rule)) === false){
 		Atomik::flash('Invalid form', 'error');
-		return;
+		Atomik::redirect('carmanagement');	
 	}
 	echo "Trying to delete carid";
 	echo $data['carid'];

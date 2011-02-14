@@ -21,5 +21,6 @@ if(empty($datarow)){
 	$_SESSION['adminlogin'] = true;
 	$_SESSION['loginname'] = $loginname;
 	$_SESSION['password'] = $password;
+	$_SESSION['adminid'] = $datarow['adminid'];
 	Atomik::redirect('adminhome');
 }

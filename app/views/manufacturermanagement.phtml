@@ -1,0 +1,20 @@
+<div id='centeredcontent'>
+<p>New manufacturer</p>
+<form name="newman" action="<?php echo Atomik::url('manufacturermanagement-business') ?>" method="post">
+Manufacturer name: <input type="text" name="name" /><br />
+Image URL: <input type="text" name="imagename" /><br />
+<input type="submit" name="add" value="Submit" /></form>
+<p>Delete manufacturer (Warning: Deleting a manufacturer also deletes all cars associated with the selected manufacturer)</p>
+<form name="deleteman" action="<?php echo Atomik::url('manufacturermanagement-business') ?>" method="post">
+Manufacturer: <select name="manufacturerkey">
+<?php foreach ($manarray as $man){
+		echo '<option value="';
+		echo $man['manid'];
+		echo '">';
+		echo $man['name'];
+		echo '</option>'
+		;}
+?>
+</select><br /></form>
+<input type="submit" name="delete" value="Submit" />
+</div>

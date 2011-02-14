@@ -1,0 +1,19 @@
+<div id='centeredcontent'>
+<p>New admin</p>
+<form name="newadmin" action="<?php echo Atomik::url('loginmanagement-business') ?>" method="post">
+Admin nick: <input type="text" name="adminnick" /><br />
+Admin password: <input type="text" name="adminpassword" /><br />
+<input type="submit" name="add" value="Submit" /></form>
+<p>Delete admin</p>
+<form name="deleteadmin" action="<?php echo Atomik::url('loginmanagement-business') ?>" method="post">
+Admin: <select name="adminid">
+<?php foreach ($adarray as $admin){
+		echo '<option value="';
+		echo $admin['adminid'];
+		echo '">';
+		echo $admin['adminnick'];
+		echo '</option>'
+		;}
+?>
+</select><br />
+<input type="submit" name="delete" value="Submit" /></form>
