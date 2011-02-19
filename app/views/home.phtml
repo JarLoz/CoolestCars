@@ -10,10 +10,10 @@
         	el.submit();
       	}
 </script>
-<div id="image1"><a href="#" onclick="submit_form(1); return false;"><img src="<?php echo Atomik::asset($leftcar['imagename']) ?>"></a>
+<div id="image1"><a href="#" onclick="submit_form(1); return false;"><img src="<?php echo Atomik::asset('assets/images/'.$leftcar['imagename']) ?>"></a>
 <p><?php echo $leftcar['mname']; echo $leftcar['cname'] ?></p></div>
 
-<div id="image2"><a href="#" onclick="submit_form(2); return false;"><img src="<?php echo Atomik::asset($rightcar['imagename']) ?>"></a>
+<div id="image2"><a href="#" onclick="submit_form(2); return false;"><img src="<?php echo Atomik::asset('assets/images/'.$rightcar['imagename']) ?>"></a>
 <p><?php echo $rightcar['mname']; echo $rightcar['cname'] ?></p></div>
 
 <?php $this->createForm("rightcar", $rightcar, $leftcar);

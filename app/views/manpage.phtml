@@ -1,0 +1,12 @@
+<div id="centeredcontent">
+<img src="<?php echo Atomik::asset('assets/images/'.$man['imagename'])?>">
+<p>Name: <?php echo $man['name'] ?></p>
+<p>Leave a comment below!</p>
+<form name="mancomment" action="" method="post">
+Nickname: <input type="text" name="usernickname" value="Anonymous"/><br />
+Comment: <input type="text" name="commenttext" size="80" /><br />
+<input type="hidden" name="manufacturerid" value="<?php echo $man['manufacturerid']?>">
+<input type="submit" name="submit" value="Submit" />
+</form>
+<?php $this->printComments($comments)?>
+</div>

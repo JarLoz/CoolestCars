@@ -20,7 +20,7 @@
 				}else{
 					echo "Not logged in";
 				}?></p>
-			<p><a href="<?php echo Atomik::url('home')?>" title="Home">Home</a> | Car ranking | Manufacturer ranking | <a href="<?php echo Atomik::url('login')?>" title="Login">Admin Login</a></p>
+			<p><a href="<?php echo Atomik::url('home')?>" title="Home">Home</a> | <a href="<?php echo Atomik::url('carranking')?>" title "Car Ranking">Car ranking</a> | <a href="<?php echo Atomik::url('manufacturerranking')?>" title="Manufacturer Ranking">Manufacturer ranking</a> | <a href="<?php echo Atomik::url('login')?>" title="Login">Admin Login</a></p>
 		</div>
 		<p style="text-align: center;"><?php
 			foreach(Atomik::get('flash:error') as $errormessage){
