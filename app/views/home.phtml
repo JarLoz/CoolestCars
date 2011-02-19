@@ -11,10 +11,10 @@
       	}
 </script>
 <div id="image1"><a href="#" onclick="submit_form(1); return false;"><img src="<?php echo Atomik::asset('assets/images/'.$leftcar['imagename']) ?>"></a>
-<p><?php echo $leftcar['mname']; echo $leftcar['cname'] ?></p></div>
+<p><?php echo $leftcar['mname'].' '.$leftcar['cname'] ?></p></div>
 
 <div id="image2"><a href="#" onclick="submit_form(2); return false;"><img src="<?php echo Atomik::asset('assets/images/'.$rightcar['imagename']) ?>"></a>
-<p><?php echo $rightcar['mname']; echo $rightcar['cname'] ?></p></div>
+<p><?php echo $rightcar['mname'].' '.$rightcar['cname'] ?></p></div>
 
 <?php $this->createForm("rightcar", $rightcar, $leftcar);
 $this->createForm("leftcar", $leftcar, $rightcar) ?>
