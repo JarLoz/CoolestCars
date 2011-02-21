@@ -1,4 +1,5 @@
 <?php
+/* A function for creating the table rows for car ranking page from given array of cars */
 function createCarTable($cars){
 	foreach($cars as $car){
 		echo '<tr>';

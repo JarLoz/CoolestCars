@@ -1,4 +1,5 @@
-
+<!-- The main page of the application that displays the two cars user can click. The little
+javascript function determines which form to send to the evaluator script -->
 <script type="text/javascript">
     	function submit_form(whichOne){
         	var el;
@@ -15,6 +16,5 @@
 
 <div id="image2"><a href="#" onclick="submit_form(2); return false;"><img src="<?php echo Atomik::asset('assets/images/'.$rightcar['imagename']) ?>"></a>
 <p><?php echo $rightcar['mname'].' '.$rightcar['cname'] ?></p></div>
-
 <?php $this->createForm("rightcar", $rightcar, $leftcar);
 $this->createForm("leftcar", $leftcar, $rightcar) ?>

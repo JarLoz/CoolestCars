@@ -11,21 +11,28 @@ body {
 }
 
 
-#image1{
+#image1 {
 	margin-top: 1em;
 	text-align: right;
 	float:left;
 	width: 48%;
 }
-#image2{
+#image2 {
 	margin-top: 1em;
 	float:right;
 	width: 48%;
 }
-#centeredcontent{
+#centeredcontent {
 	font-size: 1em;
 	width: 60em;
 	margin-top: 1em;
 	margin-left: auto;
 	margin-right: auto;
+}
+a:link {
+	color: white;
+}
+
+a:visited {
+	color: #999999;
 }

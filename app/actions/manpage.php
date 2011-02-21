@@ -1,4 +1,5 @@
 <?php
+/* Exactly the same as carpage.php, only for manufacturers. How surprising! */
 if($_GET['manufacturerid']){
 	$search = A('db:select * from manufacturer where manufacturerid = '.$_GET['manufacturerid']);
 	$man = $search->fetch();

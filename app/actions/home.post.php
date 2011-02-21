@@ -1,4 +1,7 @@
 <?php
+/* A bit more involved page. This page recieves input from home.phtml and calculates the new scores of the cars using calculateNewScores() function.
+   The function uses Elo Rating System (http://en.wikipedia.org/wiki/Elo_rating_system/) to determine the adjustments in scoring. The new scores are then
+   injected into the database and user is redirected to home */
 function calculateNewScores($winnerA, $loserB){
 	$Qa = pow(10, ($winnerA / 400));
 	$Qb = pow(10, ($loserB / 400));

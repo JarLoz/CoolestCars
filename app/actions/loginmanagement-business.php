@@ -1,4 +1,8 @@
 <?php
+/* The business end of user management. After logincheck the script either adds a new admin user or
+   removes an existing user from the database according to the POST parameters. A notable thing is that
+   you cannot add users with the same loginname, and you cannot remove the user you are currently logged
+   in as, which ensures that there is always atleast one admin user existing on the system */
 Atomik::needed('logincheck');
 allowed();
 if($_POST['add']){

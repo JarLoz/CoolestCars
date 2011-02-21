@@ -1,4 +1,5 @@
 <?php
+/* A similar function to createCarTable(), but for the manufacturer ranking page. */
 function createManTable($manufacturers){
 	foreach($manufacturers as $man){
 		echo '<tr>';

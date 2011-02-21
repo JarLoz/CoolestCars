@@ -1,4 +1,6 @@
 <?php
+/* The basic logic behind logging in. Nothing exceptional, the user's password is hashed using MD5 and then checked against the database.
+   If a match is found, session variables are initialized and the user is redirected to the admin homepage. */
 $rule = array(
 	'loginname' => array('required' => true),
 	'password' => array('required' =>true)
