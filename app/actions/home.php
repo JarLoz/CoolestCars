@@ -5,3 +5,4 @@ $allcars = $carresult->fetchAll();
 shuffle($allcars);
 $leftcar = $allcars[0];
 $rightcar = $allcars[1];
+Atomik::set('scripts', array_merge(Atomik::get('scripts'), array('assets/js/create_selection_form.js')));

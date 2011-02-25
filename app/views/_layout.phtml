@@ -7,6 +7,9 @@
 		<?php foreach (A('styles', array()) as $style): ?>
 		<link rel="stylesheet" type="text/css" href="<?php echo Atomik::appAsset($style) ?>" />
 		<?php endforeach; ?>
+		<?php foreach (A('scripts', array ()) as $script): ?>
+		<script type="text/javascript" src="<?php echo Atomik::appAsset($script) ?>"></script>
+		<?php endforeach; ?>
 	</head>
 	<body>
 		<div id="title">

@@ -4,7 +4,9 @@ Atomik::set(array(
 
 	'app/layout' => '_layout',
 
-	'styles' => array('assets/css/main.css')
+	'styles' => array('assets/css/main.css'),
+
+	'scripts' => array()
     
 ));
 /*This is where the database configuration is done. The default is a database called "coolcars"
