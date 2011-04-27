@@ -1,0 +1,71 @@
+CREATE TABLE manufacturer(
+manufacturerID SERIAL PRIMARY KEY,
+name text NOT NULL,
+imageName text);
+
+CREATE TABLE car(
+carID SERIAL PRIMARY KEY, 
+manufacturerKey int NOT NULL, 
+name text NOT NULL, 
+imageName text,
+score int DEFAULT 1500 NOT NULL);
+
+CREATE TABLE carcomment(
+commentID SERIAL PRIMARY KEY,
+carID int NOT NULL,
+manufacturerID int NOT NULL,
+userNickname text DEFAULT 'Anonymous' NOT NULL,
+commentText text NOT NULL,
+timeofposting timestamp DEFAULT CURRENT_TIMESTAMP);
+
+CREATE TABLE manufacturercomment(
+commentID SERIAL PRIMARY KEY,
+manufacturerID int NOT NULL,
+userNickname text DEFAULT 'Anonymous' NOT NULL,
+commentText text NOT NULL,
+timeofposting timestamp DEFAULT CURRENT_TIMESTAMP);
+
+CREATE TABLE admin(
+adminID SERIAL PRIMARY KEY,
+adminNick text NOT NULL,
+adminPassword text NOT NULL);
+
+INSERT INTO admin (adminNick, adminPassword) VALUES ('root', '9eb39bbabf8750a191aee49d73416093');
+
+-- default password: defaultpass
+
+CREATE VIEW carselection AS
+SELECT manufacturer.name as mname, car.name as cname, car.imagename, car.carid
+FROM car
+INNER JOIN manufacturer
+ON manufacturer.manufacturerid = car.manufacturerkey;
+
+CREATE VIEW scoreboard AS
+SELECT car.name as cname, manufacturer.name as mname, car.carid, manufacturer.manufacturerid, car.score
+FROM car
+INNER JOIN manufacturer
+ON manufacturer.manufacturerid = car.manufacturerkey
+ORDER BY car.score DESC;
+
+CREATE VIEW manufacturer_scoreboard AS
+SELECT manufacturerid, mname, avg(score) as score
+FROM scoreboard
+GROUP BY manufacturerid, mname
+ORDER BY score desc;
+
+CREATE VIEW carpage AS
+SELECT car.carid, car.manufacturerkey as manufacturerid, car.name as cname, manufacturer.name as mname, car.imagename
+FROM car
+INNER JOIN manufacturer
+ON manufacturer.manufacturerid = car.manufacturerkey;
+
+CREATE VIEW carcomment_ordered AS
+SELECT carid, commentid, usernickname, commenttext, date_trunc('second', timeofposting) as time
+FROM carcomment
+ORDER BY time DESC;
+
+CREATE VIEW manufacturercomment_ordered AS
+SELECT manufacturerid, commentid, usernickname, commenttext, date_trunc('second', timeofposting) as time
+FROM manufacturercomment
+ORDER BY time DESC;
+
